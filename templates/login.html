@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}LOG IN{% endblock %}
+
+{% block mycss %}
+    <style>
+        body
+        {
+            text-align: center;
+            padding: 8% 20%;
+        }
+        form
+        {
+            padding: 5% 20%;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <h1>LOG IN</h1>
+        <br>
+        <br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon1">Email:</span>
+            <input type="text" name="email" class="form-control form-control-lg" placeholder="bhavya@gmail.com" required>
+        </div>
+        <br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon1">Password:</span>
+            <input type="password" name="password" class="form-control form-control-lg" required>
+        </div>
+        <br>
+        <div class="form-check">
+            <label class="form-check-label" for="remember-me">
+                <input type="checkbox" name="remember_me" class="form-check-input" value="1" id="remember-me">
+                Remember me.
+            </label>
+        </div>
+        <br>
+        <button type="submit" name="signup" class="btn btn-primary btn-lg">LOG IN</button>
+    </form>
+{% endblock %}

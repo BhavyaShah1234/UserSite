@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ first_name }}&nbsp;{{ last_name }}
+{% endblock %}
+
+{% block mycss %}
+    <style>
+        body
+        {
+            text-align: center;
+            padding: 8% 10%;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>
+        NAME:&nbsp;{{ first_name }}&nbsp;{{ last_name }}
+    </h1>
+    <br>
+    <h1>
+        EMAIL:&nbsp;{{ email }}
+    </h1>
+    <br>
+    <h1>
+        PASSWORD:&nbsp;{{ password }}
+    </h1>
+    <br>
+    <h1>
+        DOB:&nbsp;{{ dob }}
+    </h1>
+    <br>
+    <h1>
+        GENDER:&nbsp;{{ gender }}
+    </h1>
+    <br>
+    <br>
+    <form action="/home/" method="POST">
+        <button type="submit" name="logout" class="btn btn-primary btn-lg" id="logout">LOGOUT</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}SIGN UP{% endblock %}
+
+{% block mycss %}
+    <style>
+        body
+        {
+            text-align: center;
+            padding: 5% 15%;
+        }
+        form
+        {
+            padding: 5% 15%;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>SIGN UP</h1>
+    <br>
+    <form action="/signup/" method="POST">
+        {% csrf_token %}
+        <br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text">First Name</span>
+            <input type="text" name="first_name" class="form-control form-control-lg" placeholder="Bhavya" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="input-group-text">Last Name</span>
+            <input type="text" name="last_name" class="form-control form-control-lg" placeholder="Shah" required>
+        </div>
+        <br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon1">Email:</span>
+            <input type="text" name="email" class="form-control form-control-lg" placeholder="bhavya@gmail.com" required>
+        </div>
+        <br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-text" id="basic-addon1">Password:</span>
+            <input type="password" name="password" class="form-control form-control-lg" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="input-group-text" id="basic-addon1">Date of Birth:</span>
+            <input type="date" name="dob" class="form-control form-control-lg" required>
+        </div>
+        <br>
+        <div class="form-check-inline">
+            <span class="input-group-text" id="basic-addon1">Gender:</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="gender" class="form-check-input" value="Male" checked>Male
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="gender" class="form-check-input" value="Female">Female
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="gender" class="form-check-input" value="Other">Other
+            </label>
+        </div>
+        <br>
+        <br>
+        <div class="form-check">
+            <label class="form-check-label" for="t-and-c">
+                <input type="checkbox" name="t_and_c" class="form-check-input" value="1" id="t-and-c" required>
+                I agree to the terms and conditions of use.
+            </label>
+        </div>
+        <br>
+        <button type="submit" name="signup" class="btn btn-primary btn-lg">SIGN UP</button>
+    </form>
+{% endblock %}

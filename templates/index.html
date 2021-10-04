@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}INDEX{% endblock %}
+
+{% block mycss %}
+    <style>
+        body
+        {
+            text-align: center;
+            padding: 3% 0%;
+        }
+        a, a:hover
+        {
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>USER SITE</h1>
+    <br>
+    <a href="/signup/">
+        <button type="button" class="btn btn-primary btn-lg" id="signup">SIGN UP</button>
+    </a>
+    <a href="/login/">
+        <button type="button" class="btn btn-primary btn-lg" id="login">LOG IN</button>
+    </a>
+{% endblock %}
